@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+        <title>Datagraph Test</title>
+        
+        <meta charset='utf-8' />
+        
+        <script src="datagraph.1.0.js"></script>
+        
+        <style>
+            *, html {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                background-color: #cdcdff;
+            }
+            
+            button {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+                font-size: 2vw;
+                font-family: Tahoma, Verdana;
+                font-weight: lighter;
+                color: whitesmoke;
+                letter-spacing: 2px;
+                font-variant: none;
+                background-color: #8888ff;
+                
+                border: none;
+                border-radius: 3vw;
+                
+                width: 15vw;
+                height: 15vh;
+                
+                padding: 10px;
+                margin-top: 43vh;
+                
+                animation: 1.2s ease-out 0s 1 slideFromLeft;
+                transition: .6s;
+            }
+            
+            button:hover {
+                width: 17vw;
+                height: 17vh;
+                font-size: 2.3vw;
+                background-color: #aaaaff;
+            }
+            
+            @keyframes slideFromLeft {
+                0% {
+                    transform: translateX(-15vw);
+                    width: 20vw;
+                    height: 20vh;
+                    opacity: 0;
+                    background-color: #888;
+                }
+                40% {
+                    width: 15vw;
+                    height: 15vh;
+                    transform: translateX(0%); 
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <button onclick="graphData()">Show Graph!</button>
+        
+        <script>
+            /*
+                the graph must be initiated by human interaction (such as click events or mouseover events)
+                due to Chrome's policy against media opening automatically
+            */
+            
+            function graphData() {
+                var data = [
+                    [1, 2],
+                    [2, 3],
+                    [3, 4],
+                    [4, 5]
+                ];
+                
+                var trendline = (x) => { //any function that takes in a number and outputs another number
+                    return 8 * (Math.cos(0.5*x)) + x;
+                }
+                
+                let graph1 = new DataGraph(data, 500, 500, trendline);
+            }
+        </script>
+        
+    </body>
+</html>
