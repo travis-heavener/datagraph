@@ -1,16 +1,16 @@
 # datagraph.js
 
-a library that allows for physical demonstration of data on a 2-dimensional plane
+a library that lets you see a physical demonstration of your data on a 2-dimensional graph
 
 ## demo
 
 ### download the DataGraph library for your project!
 
-(https://raw.githubusercontent.com/travis-heavener/datagraph.js/master/datagraph.1.1.js)
+https://raw.githubusercontent.com/travis-heavener/datagraph.js/master/datagraph.1.1.js
 
 ### or embed the online version!
 
-(https://cdn.jsdelivr.net/gh/travis-heavener/datagraph.js/datagraph.1.1.js)
+https://cdn.jsdelivr.net/gh/travis-heavener/datagraph.js/datagraph.1.1.js
 
 to create the most basic DataGraph:
 
