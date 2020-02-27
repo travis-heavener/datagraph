@@ -4,6 +4,10 @@ a library that allows for physical demonstration of data on a 2-dimensional plan
 
 ## demo
 
+download the DataGraph library for your project!
+
+[DataGraph.js](https://gist.github.com/travis-heavener/23e04dd71c095cb5611d1688b53bcf6b.js)
+
 to create the most basic DataGraph:
 
 ```
