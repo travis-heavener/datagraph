@@ -32,7 +32,7 @@ let graph = new DataGraph( data, null, null, trendline );
 #### **note:**
 
 - any parameters can be left null to ignore their input (ex. you want to add a trendline but keep default width and height)
-`let graph = new DataGraph( data, null, null, trendline);`
+`let graph = new DataGraph( data, null, null, trendline );`
 
 ## documentation
 
