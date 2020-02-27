@@ -4,7 +4,7 @@ a library that allows for physical demonstration of data on a 2-dimensional plan
 
 ## demo
 
-the basic format of the DataGraph object is as follows:
+to create the most basic DataGraph:
 
 ```
 const data = [ [1, 2], [2, 3], [3, 4], [4, 5] ];
@@ -29,6 +29,14 @@ const trendline = (x) => {
 let graph = new DataGraph( data, null, null, trendline );
 //a graph appears with a trendline! woohoo!
 ```
+
+to specify the graph's x and y ranges:
+
+```
+let graph = new DataGraph( data, 600, 600, null, 12, 12 );
+//a graph appears with a maximum/minimum x value of +/-6 and a maximum/minimum y value of +/-6! hooray!
+```
+
 #### **note:**
 
 - any parameters can be left **null** to ignore their input (ex. you want to add a trendline but keep default width and height)
