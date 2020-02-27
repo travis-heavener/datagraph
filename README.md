@@ -4,7 +4,7 @@ a library that allows for physical demonstration of data on a 2-dimensional plan
 
 ## demo
 
-#### download the DataGraph library for your project!
+### download the DataGraph library for your project!
 
 [DataGraph.js](https://raw.githubusercontent.com/travis-heavener/datagraph.js/master/datagraph.1.1.js)
 
@@ -57,7 +57,7 @@ in the DataGraph function, the following parameters can be modified:
 - graph x range
 - graph y range
 
-#### data
+### data
 
 the data parameter represents the data that is to be displayed in the graph. ex:
 ```
@@ -72,7 +72,7 @@ let graph = new DataGraph(data);
 //shows the data in a visual graph
 ```
 
-#### window width & window height
+### window width & window height
 
 the window width and height parameters represent the width and height of the created window, in pixels (px). ex:
 ```
@@ -80,7 +80,7 @@ let graph = new DataGraph(data, 600, 400);
 //makes a graph with a width of 600px and a height of 400px
 ```
 
-#### trendline
+### trendline
 
 a function that takes a number as input and returns a number as an output. ex:
 ```
@@ -91,7 +91,7 @@ let graph = new DataGraph(data, 600, 400, trendlineFunc);
 //makes a graph with a trendline of the x^2 function
 ```
 
-#### graph x range & graph y range
+### graph x range & graph y range
 
 the graph x range and y range each represent the maximum and minimum range of the x and y axes.
 the maximum shown x and y values are half of the corresponding parameter ex:
