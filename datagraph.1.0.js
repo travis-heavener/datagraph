@@ -21,8 +21,8 @@
 
 function DataGraph(inputToDisplay, displayX=600, displayY=600, trendline=null, graphw=null, graphh=null) {
     this.data = inputToDisplay;
-    this.screenWidth = displayX;
-    this.screenHeight = displayY;
+    this.screenWidth = displayX === null ? 600 : displayX;
+    this.screenHeight = displayY === null ? 600 : displayY;
     this.window = window.open("", "_blank", "width=" + this.screenWidth + ",height=" + this.screenHeight);
     this.graph = document.createElement("canvas");
     
@@ -81,16 +81,26 @@ function DataGraph(inputToDisplay, displayX=600, displayY=600, trendline=null, g
         let minY = 0;
         
         for (let i in this.data) {
-            if (this.data[i][0] > maxX) {
-                maxX = this.data[i][0];
-            } else if (this.data[i][0] < minX) {
-                minX = this.data[i][0];
+            if (this._graphw === null) {
+                if (this.data[i][0] > maxX) {
+                    maxX = this.data[i][0];
+                } else if (this.data[i][0] < minX) {
+                    minX = this.data[i][0];
+                }
+            } else {
+                maxX = this._graphw/2;
+                minX = -this._graphw/2;
             }
             
-            if (this.data[i][1] > maxY) {
-                maxY = this.data[i][1];
-            } else if (this.data[i][1] < minY) {
-                minY = this.data[i][1];
+            if (this._graphh === null) {
+                if (this.data[i][1] > maxY) {
+                    maxY = this.data[i][1];
+                } else if (this.data[i][1] < minY) {
+                    minY = this.data[i][1];
+                }
+            } else {
+                maxY = this._graphh/2;
+                minY = -this._graphh/2;
             }
         }
         
@@ -140,11 +150,11 @@ function DataGraph(inputToDisplay, displayX=600, displayY=600, trendline=null, g
         ctx.fillStyle = "black";
         ctx.font = "10px Tahoma Bold";
         ctx.fillText(dimX.toFixed(2), this.screenWidth - 15, (this.screenHeight / 2) + 10); //right label
-        ctx.fillText(-dimX.toFixed(2), 10, (this.screenHeight / 2) + 10); //left label
+        ctx.fillText((-dimX).toFixed(2), 10, (this.screenHeight / 2) + 10); //left label
         
         ctx.textAlign = "left";
         ctx.fillText(dimY.toFixed(2), (this.screenWidth / 2) + 15, 20); //top label
-        ctx.fillText(-dimY.toFixed(2), (this.screenWidth / 2) + 15, this.screenHeight - 10); //bottom label
+        ctx.fillText((-dimY).toFixed(2), (this.screenWidth / 2) + 15, this.screenHeight - 10); //bottom label
         
     }
     
