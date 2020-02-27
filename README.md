@@ -1,4 +1,4 @@
-# datagraph
+# datagraph.js
 
 a library that allows for physical demonstration of data on a 2-dimensional plane
 
